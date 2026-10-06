@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Iscel Joy D. Regalado | IT Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* ==============================
+           GENERAL
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --pink: #ff1493;
+            --hot-pink: #ff2f92;
+            --light-pink: #ffb6d9;
+            --soft-pink: #fff0f8;
+            --dark-pink: #8b1d63;
+            --dark: #170815;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: var(--soft-pink);
+            color: #35152d;
+            line-height: 1.6;
+        }
+
+        /* ==============================
+           NAVIGATION BAR
+        ============================== */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            padding: 18px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(23, 8, 21, 0.94);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(255, 47, 146, 0.4);
+
+            box-shadow: 0 5px 25px rgba(255, 20, 147, 0.12);
+        }
+
+        .logo {
+            color: var(--pink);
+            font-family: "Share Tech Mono", monospace;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--pink);
+        }
+
+
+        /* ==============================
+           HERO SECTION
+        ============================== */
+
+        .hero {
+            min-height: 100vh;
+
+            padding: 130px 8% 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(255, 47, 146, 0.25),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 85% 80%,
+                    rgba(255, 20, 147, 0.20),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #180817,
+                    #3b102f 55%,
+                    #170815
+                );
+
+            overflow: hidden;
+        }
+
+        .hero-content {
+            width: 1100px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            align-items: center;
+
+            gap: 60px;
+        }
+
+        .hero-text {
+            order: 1;
+        }
+
+        .tag {
+            color: var(--light-pink);
+
+            font-family: "Share Tech Mono", monospace;
+
+            font-size: 16px;
+
+            margin-bottom: 12px;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(38px, 5vw, 70px);
+
+            line-height: 1.05;
+
+            margin-bottom: 18px;
+        }
+
+        .hero-text h1 span {
+            color: var(--pink);
+
+            text-shadow:
+                0 0 15px rgba(255, 20, 147, 0.5),
+                0 0 30px rgba(255, 20, 147, 0.3);
+        }
+
+        .hero-text h2 {
+            color: #ffd3e8;
+
+            font-size: 21px;
+
+            font-weight: 500;
+
+            margin-bottom: 18px;
+        }
+
+        .hero-text p {
+            color: #e8c6da;
+
+            max-width: 600px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ==============================
+           BUTTONS
+        ============================== */
+
+        .buttons {
+            margin-top: 28px;
+
+            display: flex;
+
+            gap: 14px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff1493,
+                    #ff55aa
+                );
+
+            box-shadow:
+                0 0 25px rgba(255, 20, 147, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 0 35px rgba(255, 20, 147, 0.60);
+        }
+
+        .btn-outline {
+            color: var(--light-pink);
+
+            border: 1px solid var(--pink);
+        }
+
+        .btn-outline:hover {
+            background: var(--pink);
+
+            color: white;
+        }
+
+
+        /* ==============================
+           PROFILE PHOTO
+        ============================== */
+
+        .profile-area {
+            display: flex;
+
+            justify-content: center;
+
+            position: relative;
+        }
+
+        .profile-ring {
+            width: 390px;
+            height: 390px;
+
+            padding: 8px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff1493,
+                    #ff9dca,
+                    #ff1493
+                );
+
+            box-shadow:
+                0 0 35px rgba(255, 20, 147, 0.50),
+                0 0 90px rgba(255, 20, 147, 0.20);
+
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        .profile-ring img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            object-position: center top;
+
+            border-radius: 50%;
+
+            border: 6px solid #220b1d;
+
+            display: block;
+        }
+
+        @keyframes glow {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        .code-decoration {
+            position: absolute;
+
+            right: -5px;
+            bottom: 20px;
+
+            padding: 13px 18px;
+
+            border-radius: 12px;
+
+            background: rgba(255, 20, 147, 0.14);
+
+            border: 1px solid rgba(255, 47, 146, 0.6);
+
+            color: #ffc4e0;
+
+            font-family: "Share Tech Mono", monospace;
+
+            backdrop-filter: blur(8px);
+        }
+
+
+        /* ==============================
+           GENERAL SECTION
+        ============================== */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+        .section-title .small {
+            color: var(--pink);
+
+            font-family: "Share Tech Mono", monospace;
+        }
+
+        .section-title h2 {
+            color: #75164f;
+
+            font-size: 38px;
+
+            margin-top: 5px;
+        }
+
+        .section-title span {
+            display: block;
+
+            width: 70px;
+            height: 4px;
+
+            margin: 13px auto;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff1493,
+                    #ff8fc4
+                );
+
+            border-radius: 20px;
+        }
+
+
+        /* ==============================
+           ABOUT ME
+        ============================== */
+
+        .about {
+            background: white;
+        }
+
+        .about-card {
+            max-width: 950px;
+
+            margin: auto;
+
+            padding: 38px;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff1f8,
+                    #ffe0ef
+                );
+
+            border: 1px solid #ffc0dc;
+
+            box-shadow:
+                0 15px 45px rgba(126, 25, 84, 0.08);
+        }
+
+        .about-card p {
+            text-align: center;
+
+            font-size: 17px;
+
+            line-height: 1.9;
+        }
+
+
+        /* ==============================
+           SKILLS
+        ============================== */
+
+        .skills {
+            background: #fff0f7;
+        }
+
+        .skills-grid {
+            max-width: 1050px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .skill-card {
+            padding: 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+            background: white;
+
+            border: 1px solid #ffc3df;
+
+            border-radius: 18px;
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-6px);
+
+            border-color: var(--pink);
+
+            box-shadow:
+                0 10px 30px rgba(255, 20, 147, 0.18);
+        }
+
+        .skill-icon {
+            min-width: 52px;
+
+            height: 52px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff1493,
+                    #ff69b4
+                );
+
+            color: white;
+
+            font-size: 23px;
+        }
+
+        .skill-card h3 {
+            color: #641546;
+
+            font-size: 16px;
+        }
+
+
+        /* ==============================
+           PROJECTS
+        ============================== */
+
+        .projects {
+            background: white;
+        }
+
+        .project-card {
+            max-width: 950px;
+
+            margin: auto;
+
+            padding: 40px;
+
+            text-align: center;
+
+            border-radius: 22px;
+
+            background: #210b1b;
+
+            color: white;
+
+            border: 1px solid #ff2f92;
+
+            box-shadow:
+                0 0 35px rgba(255, 20, 147, 0.15);
+        }
+
+        .project-card h3 {
+            color: #ff5eaa;
+
+            font-family: "Share Tech Mono", monospace;
+
+            font-size: 25px;
+
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #f0c9dc;
+
+            line-height: 1.8;
+        }
+
+
+        /* ==============================
+           CONTACT
+        ============================== */
+
+        .contact {
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff1493,
+                    #a91c72
+                );
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .contact .section-title h2 {
+            color: white;
+        }
+
+        .contact .section-title span {
+            background: white;
+        }
+
+        .contact p {
+            margin: 10px;
+        }
+
+        .contact a {
+            color: white;
+
+            font-weight: 600;
+
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            padding: 22px;
+
+            text-align: center;
+
+            background: #170815;
+
+            color: #ffc4df;
+
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           RESPONSIVE DESIGN
+        ============================== */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav ul li:nth-child(n+4) {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+            .hero-text {
+                order: 2;
+            }
+
+            .profile-area {
+                order: 1;
+            }
+
+            .profile-ring {
+                width: 280px;
+                height: 280px;
+            }
+
+            .code-decoration {
+                right: 5%;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .hero-text p {
+                margin: auto;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            nav .logo {
+                font-size: 19px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .profile-ring {
+                width: 230px;
+                height: 230px;
+            }
+
+            .hero-text h1 {
+                font-size: 38px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .about-card,
+            .project-card {
+                padding: 25px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ==============================
+         NAVIGATION
+    ============================== -->
+
+    <nav>
+
+        <div class="logo">
+            &lt;IJD<span>/&gt;</span>
+        </div>
+
+        <ul>
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+
+    </nav>
+
+
+
+    <!-- ==============================
+         HOME / HERO
+    ============================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="hero-text">
+
+                <div class="tag">
+                    // HELLO, WORLD! 👋
+                </div>
+
+
+                <h1>
+
+                    I'm
+                    <span>Iscel Joy</span>
+
+                    <br>
+
+                    D. Regalado
+
+                </h1>
+
+
+                <h2>
+                    Bachelor of Science in Information Technology Student
+                </h2>
+
+
+                <p>
+
+                    Major in Network Design Management.
+
+                    I build practical systems and design reliable
+                    network infrastructures, with a passion for
+                    creating functional IT solutions.
+
+                </p>
+
+
+                <div class="buttons">
+
+                    <a
+                        href="#about"
+                        class="btn btn-primary"
+                    >
+                        Explore My Profile
+                    </a>
+
+
+                    <a
+                        href="#contact"
+                        class="btn btn-outline"
+                    >
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT SIDE / PHOTO -->
+
+            <div class="profile-area">
+
+                <div class="profile-ring">
+
+                    <!--
+                        IMPORTANT:
+                        Put your picture in the same folder
+                        as this HTML file and name it:
+
+                        profile.jpg
+                    -->
+
+                    <img
+                        src="profile.jpg"
+                        alt="Iscel Joy D. Regalado"
+                    >
+
+                </div>
+
+
+                <div class="code-decoration">
+                    &lt;IT Student /&gt;
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         ABOUT ME
+    ============================== -->
+
+    <section class="about" id="about">
+
+        <div class="section-title">
+
+            <div class="small">
+                // ABOUT ME
+            </div>
+
+            <h2>
+                Who I Am
+            </h2>
+
+            <span></span>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <p>
+
+                I am a Bachelor of Science in Information Technology
+                student at Nueva Vizcaya State University, majoring
+                in Network Design Management. I build practical
+                systems and design reliable network infrastructures.
+                Dedicated to creating functional IT solutions.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         SKILLS
+    ============================== -->
+
+    <section class="skills" id="skills">
+
+        <div class="section-title">
+
+            <div class="small">
+                // MY SKILLS
+            </div>
+
+            <h2>
+                What I Can Do
+            </h2>
+
+            <span></span>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Basic network setup and connection
+                </h3>
+
+            </div>
+
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Simple web page building
+                </h3>
+
+            </div>
+
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    📁
+                </div>
+
+                <h3>
+                    Organizing information and records
+                </h3>
+
+            </div>
+
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🔧
+                </div>
+
+                <h3>
+                    Basic troubleshooting and problem solving
+                </h3>
+
+            </div>
+
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    📝
+                </div>
+
+                <h3>
+                    Writing clear guides and instructions
+                </h3>
+
+            </div>
+
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🖥️
+                </div>
+
+                <h3>
+                    Computer hardware assembly &amp; maintenance
+                </h3>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         PROJECTS
+    ============================== -->
+
+    <section class="projects" id="projects">
+
+        <div class="section-title">
+
+            <div class="small">
+                // PROJECTS
+            </div>
+
+            <h2>
+                My IT Projects
+            </h2>
+
+            <span></span>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <h3>
+                &lt; IT &amp; Network Projects /&gt;
+            </h3>
+
+
+            <p>
+
+                I am interested in developing practical IT systems,
+                creating simple websites, configuring networks,
+                and designing reliable technology solutions that
+                can help users and organizations.
+
+            </p>
+
+
+            <br>
+
+
+            <a
+                href="#contact"
+                class="btn btn-primary"
+            >
+                Let's Connect
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         CONTACT
+    ============================== -->
+
+    <section class="contact" id="contact">
+
+        <div class="section-title">
+
+            <div class="small">
+                // CONTACT
+            </div>
+
+            <h2>
+                Let's Connect
+            </h2>
+
+            <span></span>
+
+        </div>
+
+
+        <p>
+            Interested in connecting or working together?
+        </p>
+
+
+        <p>
+
+            📧 Email:
+
+            <a href="mailto:your-email@example.com">
+                your-email@example.com
+            </a>
+
+        </p>
+
+
+        <p>
+
+            💻 GitHub:
+
+            <a
+                href="#"
+                target="_blank"
+            >
+                My GitHub Profile
+            </a>
+
+        </p>
+
+    </section>
+
+
+
+    <!-- ==============================
+         FOOTER
+    ============================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Iscel Joy D. Regalado | IT Portfolio
+        </p>
+
+        <p>
+            Made with 💗 and code.
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
